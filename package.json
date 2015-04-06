@@ -1,0 +1,45 @@
+{
+  "name": "browserify-file-size-tree",
+  "version": "0.1.0",
+  "description": "Similar to disc, except displays information in a more intuitive format.",
+  "main": "index.js",
+  "bin": {
+    "bfst": "./bin/cli.js"
+  },
+  "dependencies": {
+    "file-size-tree": "^0.0.0",
+    "fs-bluebird": "^0.1.2",
+    "compute-roundn": "^1.0.3",
+    "js-beautify": "^1.5.5",
+    "browserify": "^9.0.4",
+    "commander": "^2.7.1",
+    "starts-with": "^1.0.0",
+    "lodash": "^3.6.0",
+    "through2": "^0.6.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/olsonpm/browserify-file-size-tree.git"
+  },
+  "keywords": [
+    "browserify",
+    "size",
+    "tree",
+    "package"
+  ],
+  "author": "Phil Olson <philip.olson@protonmail.ch> (https://github.com/olsonpm)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olsonpm/browserify-file-size-tree/issues"
+  },
+  "homepage": "https://github.com/olsonpm/browserify-file-size-tree",
+  { 
+	  "engines": { 
+		  "node": ">=0.10.3 <0.12"
+		} 
+	}
+}
