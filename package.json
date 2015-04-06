@@ -7,14 +7,14 @@
     "bfst": "./bin/cli.js"
   },
   "dependencies": {
-    "file-size-tree": "^0.0.0",
-    "fs-bluebird": "^0.1.2",
-    "compute-roundn": "^1.0.3",
-    "js-beautify": "^1.5.5",
     "browserify": "^9.0.4",
     "commander": "^2.7.1",
-    "starts-with": "^1.0.0",
+    "compute-roundn": "^1.0.3",
+    "cp": "^0.2.0",
+    "fs-bluebird": "^0.1.2",
+    "js-beautify": "^1.5.5",
     "lodash": "^3.6.0",
+    "starts-with": "^1.0.0",
     "through2": "^0.6.3"
   },
   "devDependencies": {},
@@ -37,9 +37,7 @@
     "url": "https://github.com/olsonpm/browserify-file-size-tree/issues"
   },
   "homepage": "https://github.com/olsonpm/browserify-file-size-tree",
-  { 
-	  "engines": { 
-		  "node": ">=0.10.3 <0.12"
-		} 
-	}
+  "engines": {
+    "node": ">=0.10.3"
+  }
 }
