@@ -13,7 +13,8 @@ var fileTree = require('file-size-tree')
     , lodash = require('lodash')
     , beautify_html = require('js-beautify').html
     , path = require('path')
-    , cp = require('cp');
+    , cp = require('cp')
+    , mkdirp = require('mkdirp');
 
 
 //------//
@@ -108,7 +109,8 @@ BFST.prototype.GenerateFileSizeTree = function() {
         htmlRes += '<span class="name">' + root + '</span><span class="size" data-bytes="' + totalBytes + '">' + kb + ' KB</span></div><ul class="children">';
         htmlRes += generateHtml(ftResult);
         htmlRes += '</ul></div>';
-        var htmlTemplate = bFs.readFileSync('./template.erb');
+        var rootSrc = path.join(__dirname, '../bin/static');
+        var htmlTemplate = bFs.readFileSync(path.join(rootSrc, 'template.erb'));
 
         var compiledTemplate = lodash.template(htmlTemplate, {
             imports: {
@@ -119,19 +121,18 @@ BFST.prototype.GenerateFileSizeTree = function() {
             indent_size: 2
         });
         var rootDest = './file-size-tree';
-        bFs.mkdirSync(rootDest);
+        mkdirp.sync(rootDest);
         bFs.writeFileSync(path.join(rootDest, 'index.html'), compiledTemplate);
-        bFs.mkdirSync(path.join(rootDest, 'static'));
-        var rootSrc = path.join(__dirname, 'bin/static');
-        rootDest = path.join(root, 'resources');
-        cp.sync(path.join(rootSrc, 'normalize.css'), path.join(root, 'normalize.css'));
-        cp.sync(path.join(rootSrc, 'fonts.css'), path.join(root, 'fonts.css'));
-        cp.sync(path.join(rootSrc, 'styles.css'), path.join(root, 'styles.css'));
-        cp.sync(path.join(rootSrc, 'jquery-2.1.3.min.js'), path.join(root, 'jquery-2.1.3.min.js'));
-        cp.sync(path.join(rootSrc, 'gsap-1.16.1-CSSPlugin.min.js'), path.join(root, 'gsap-1.16.1-CSSPlugin.min.js'));
-        cp.sync(path.join(rootSrc, 'gsap-1.16.1-EasePack.min.js'), path.join(root, 'gsap-1.16.1-EasePack.min.js'));
-        cp.sync(path.join(rootSrc, 'gsap-1.16.1-TweenLite.min.js'), path.join(root, 'gsap-1.16.1-TweenLite.min.js'));
-        cp.sync(path.join(rootSrc, 'main.browserified.js'), path.join(root, 'main.browserified.js'));
+        rootDest = path.join(rootDest, 'resources');
+        mkdirp.sync(rootDest);
+        cp.sync(path.join(rootSrc, 'normalize.css'), path.join(rootDest, 'normalize.css'));
+        cp.sync(path.join(rootSrc, 'fonts.css'), path.join(rootDest, 'fonts.css'));
+        cp.sync(path.join(rootSrc, 'styles.css'), path.join(rootDest, 'styles.css'));
+        cp.sync(path.join(rootSrc, 'jquery-2.1.3.min.js'), path.join(rootDest, 'jquery-2.1.3.min.js'));
+        cp.sync(path.join(rootSrc, 'gsap-1.16.1-CSSPlugin.min.js'), path.join(rootDest, 'gsap-1.16.1-CSSPlugin.min.js'));
+        cp.sync(path.join(rootSrc, 'gsap-1.16.1-EasePack.min.js'), path.join(rootDest, 'gsap-1.16.1-EasePack.min.js'));
+        cp.sync(path.join(rootSrc, 'gsap-1.16.1-TweenLite.min.js'), path.join(rootDest, 'gsap-1.16.1-TweenLite.min.js'));
+        cp.sync(path.join(rootSrc, 'main.browserified.js'), path.join(rootDest, 'main.browserified.js'));
         console.log('Finished - open ./file-size-tree/index.html in your favorite browser to see the result.');
     });
 };
