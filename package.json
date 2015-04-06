@@ -11,6 +11,7 @@
     "commander": "^2.7.1",
     "compute-roundn": "^1.0.3",
     "cp": "^0.2.0",
+    "file-size-tree": "0.0.0",
     "fs-bluebird": "^0.1.2",
     "js-beautify": "^1.5.5",
     "lodash": "^3.6.0",
