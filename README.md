@@ -8,7 +8,7 @@
  
 ##Installation
 ```
-npm install olsonpm/browserify-file-size-tree
+npm install --save -g olsonpm/browserify-file-size-tree
 ```
  
 ##How to use
