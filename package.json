@@ -2,7 +2,7 @@
   "name": "browserify-file-size-tree",
   "version": "0.1.0",
   "description": "Similar to disc, except displays information in a more intuitive format.",
-  "main": "index.js",
+  "main": "lib-core/index.js",
   "bin": {
     "bfst": "./bin/cli.js"
   },
