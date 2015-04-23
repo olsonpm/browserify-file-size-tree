@@ -1,0 +1,135 @@
+/*
+Set all to border-box
+*/
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+/*
+Reset control styling
+*/
+
+select {
+	display: inline-block;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+
+/*
+Site-specific
+*/
+
+body {
+	background-color: white;
+	color: #333;
+	font-family: 'Open Sans', sans-serif;
+}
+#frame {
+	max-width: 900px;
+	margin: 0 auto;
+}
+#frame:last-child {
+	margin-bottom: 50px;
+}
+ul {
+	list-style-type: none;
+	margin: 0;
+}
+h1 {
+	font-size: 30px;
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+h2 {
+	font-size: 24px;
+	margin-top: 30px;
+	margin-bottom: 16px;
+}
+
+
+ul {
+	overflow: hidden;
+}
+ul > li > ul > li > ul {
+	height: 0;
+}
+
+.root > ul {
+	border-radius: 4px;
+	border: 1px solid #333;
+}
+.root > .row {
+	padding: 14px 0;
+}
+.root > .row > .name {
+	font-weight: 600;
+}
+.root > .row > .name:before {
+	font-weight: 400;
+	content: "Entry file: ";
+}
+.root > .row > .size:before {
+	content: "Estimated uncompressed bundle size: ";
+}
+
+.percentage-bar {
+	vertical-align: bottom;
+	display: inline-block;
+	height: 22px;
+	border-radius: 4px;
+	border: 1px solid #7881FF;
+	width: 52px;
+}
+.percentage-bar > .fill {
+	display: inline-block;
+	height: 20px;
+	background-color: #DADDFF;
+	width: 0;
+}
+
+.name {
+	margin-right: 30px;
+}
+.size {
+	margin-right: 30px;
+}
+.size:before {
+	content: "size: ";
+}
+.percentage {
+	margin-right: 8px;
+}
+.percentage:after {
+	content: "%";
+}
+.directory .row {
+	padding: 8px 0;
+}
+.directory > .row > .name{
+	font-weight: 600;
+}
+.directory:hover {
+	cursor: pointer;
+}
+.directory > .row:before {
+	content: " > ";
+}
+
+
+.options {
+	border-radius: 4px;
+	border: 1px solid #333;
+	padding: 24px 40px;
+}
+.options .label {
+	margin-right: 20px;
+}
+.options .label:after {
+	content: ":";
+}
